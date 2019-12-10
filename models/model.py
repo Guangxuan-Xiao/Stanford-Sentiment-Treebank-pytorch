@@ -1,13 +1,15 @@
-from . import rnn, lstm
+from . import rnn, lstm, gru
+
+models = {
+    "Naive_LSTM": lstm.NaiveLSTM,
+    "Bi_LSTM": lstm.BiLSTM,
+    "Bi_LSTM_Dropout": lstm.BiLSTM_Dropout,
+    "Naive_GRU": gru.NaiveGRU,
+    "Bi_GRU": gru.BiGRU,
+    "Bi_GRU_Dropout": gru.BiGRU_Dropout,
+    "Naive_RNN": rnn.NaiveRNN,
+}
 
 
 def model(name):
-    if name == "naive_lstm":
-        return lstm.NaiveLSTM
-    if name == "bi_lstm":
-        return lstm.BiLSTM
-    if name == "naive_rnn":
-        return rnn.NaiveRNN
-    else:
-        print("Invalid model name!")
-        exit()
+    return models[name]

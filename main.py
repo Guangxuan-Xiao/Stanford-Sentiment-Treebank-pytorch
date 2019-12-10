@@ -120,11 +120,11 @@ def main():
     # Save Result
     result_dict = {
         args.model + " Training": [train_loss_list, train_acc_list],
-        args.model + " Validating": [val_loss_list, val_loss_list],
+        args.model + " Validating": [val_loss_list, val_acc_list],
     }
 
     save_result(result_dict, args.model + "_result")
-    plot.plot_loss_and_acc_save(result_dict, args.model)
+    plot.plot_loss_and_acc_save(result_dict, "./plots/" + args.model)
 
 
 if __name__ == "__main__":
