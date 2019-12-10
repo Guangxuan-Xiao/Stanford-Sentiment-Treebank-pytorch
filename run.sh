@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=4 python solver.py --model bi_lstm --batch-size 8 --max-epoch 200
+CUDA_VISIBLE_DEVICES=0 python main.py --model bi_lstm --batch-size 8 --max-epoch 200

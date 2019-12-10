@@ -1,5 +1,4 @@
 import torch.nn as nn
-import torch
 
 
 class NaiveRNN(nn.Module):
@@ -14,5 +13,4 @@ class NaiveRNN(nn.Module):
         embedded = self.embedding(text)
         # embedded.shape = (sentence len, batch size, embedded dim)
         output, hidden = self.rnn(embedded)
-        assert torch.equal(output[-1, :, :], hidden.squeeze(0))
-        return self.fc(hidden.squeeze(0))
+        return self.fc(output[-1])

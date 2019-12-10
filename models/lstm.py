@@ -13,7 +13,7 @@ class NaiveLSTM(nn.Module):
         embedded = self.embedding(text)
         # embedded.shape = (sentence len, batch size, embedded dim)
         output, hidden = self.lstm(embedded)
-        return self.fc(output[-1, :, :])
+        return self.fc(output[-1])
 
 
 class BiLSTM(nn.Module):
