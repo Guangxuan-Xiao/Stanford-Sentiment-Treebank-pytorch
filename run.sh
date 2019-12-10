@@ -1,1 +1,0 @@
-CUDA_VISIBLE_DEVICES=0 python main.py --model bi_lstm --batch-size 8 --max-epoch 200
